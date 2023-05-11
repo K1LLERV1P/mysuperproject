@@ -94,7 +94,7 @@ static size_t getResponsetoString(void* contents, size_t size, size_t nmemb, voi
 
 ```
 // Извлечение температуры воздуха
-  string res_gis;
+	string res_gis;
 	if (str_response[Find_Gisss + 4] == '&') {
 		cout << '-' << str_response[Find_Gisss + 11];
 		res_gis = res_gis + "-" + str_response[Find_Gisss + 11];
@@ -115,3 +115,18 @@ static size_t getResponsetoString(void* contents, size_t size, size_t nmemb, voi
 	else { cout << str_response[Find_Gisss + 4] << str_response[Find_Gisss + 5]; res_gis = res_gis + str_response[Find_Gisss + 4] + str_response[Find_Gisss + 5]; }
 ```
 
+#### Из string в int
+А теперь ```Запись html кода в string; Извлечение из string чего-нибудь полезного``` повторяем еще два раза, но с другими сайтами. Далее нужно было преобразовать полученные данные из string в int для вычисления средней температуры
+```
+	int res_gis_int = stoi(res_gis);
+	int res_wor_int = stoi(res_wor);
+	int res_mail_int = stoi(res_mail);
+
+	double sr = (res_gis_int + res_wor_int + res_mail_int) / 3.0;
+	cout << "sr  =  " << sr;
+```
+#### Добавление меню выбора действия
+После всех страда.. Кхм, после всей работы я решил сделать меню с возможностью выбрать день, прогноз погоды на который показать (код меню можно найти в главном файле с всей программой, потому что он не маленький)
+
+
+<img width="300px" src="могучий враг повержен.png"></img>
