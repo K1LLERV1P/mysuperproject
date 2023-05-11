@@ -1,4 +1,4 @@
-﻿#define CURL_STATICLIB
+#define CURL_STATICLIB
 #define UP 72
 #define DOWN 80
 #define ENTER 13
